@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Gilang Jaya 07 - Mie Ayam & Bakso Lezat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styling - Perpaduan Hitam, Putih, Merah */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Putih untuk latar belakang utama */
+            color: #000000; /* Hitam untuk teks utama */
+            line-height: 1.6;
+        }
+        header {
+            background-color: #e74c3c; /* Merah untuk header */
+            color: #ffffff; /* Putih untuk teks */
+            padding: 20px 0;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        header h2 {
+            margin: 0;
+            font-size: 2em;
+            font-weight: 700;
+        }
+        nav {
+            background-color: #000000; /* Hitam untuk navigasi */
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 25px;
+        }
+        nav ul li a {
+            color: #ffffff; /* Putih untuk link nav */
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #e74c3c; /* Merah untuk hover */
+        }
+        .hero {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); /* Gradient merah untuk hero */
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff; /* Putih untuk teks hero */
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #home { background-color: #ffffff; } /* Putih */
+        #tentang { background-color: #f5f5f5; } /* Abu muda untuk variasi, tapi tetap netral */
+        #menu { background-color: #ffffff; } /* Putih */
+        #kontak { background-color: #f5f5f5; } /* Abu muda */
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            text-align: center;
+            color: #000000; /* Hitam untuk heading */
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.1em;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: #000000; /* Hitam untuk paragraf */
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .menu-item {
+            background-color: #ffffff; /* Putih untuk menu item */
+            border: 2px solid #000000; /* Hitam untuk border */
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            border-color: #e74c3c; /* Merah untuk hover border */
+        }
+        .menu-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: #e74c3c; /* Merah untuk nama menu */
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+        .menu-item p {
+            font-size: 1em;
+            color: #000000; /* Hitam untuk deskripsi */
+            font-style: italic;
+            margin: 0;
+            text-align: justify;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #000000; /* Hitam untuk border form */
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+            background-color: #ffffff; /* Putih untuk input bg */
+            color: #000000; /* Hitam untuk teks input */
+        }
+        input:focus, textarea:focus {
+            border-color: #e74c3c; /* Merah untuk focus */
+            outline: none;
+        }
+        button {
+            background-color: #e74c3c; /* Merah untuk button */
+            color: #ffffff; /* Putih untuk teks button */
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.1em;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto 0;
+        }
+        button:hover {
+            background-color: #c0392b; /* Merah gelap untuk hover */
+        }
+        .whatsapp-btn, .facebook-btn {
+            display: inline-block;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px auto;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp-btn {
+            background-color: #25D366; /* Hijau untuk WA */
+        }
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+        }
+        .facebook-btn {
+            background-color: #3b5998; /* Biru standar Facebook */
+        }
+        .facebook-btn:hover {
+            background-color: #e74c3c; /* Merah untuk hover, konsisten dengan tema */
+        }
+        footer {
+            background-color: #000000; /* Hitam untuk footer */
+            color: #ffffff; /* Putih untuk teks footer */
+            text-align: center;
+            padding: 30px 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95em;
+        }
+        footer a {
+            color: #e74c3c; /* Merah untuk link di footer */
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Warung Gilang Jaya 07 - Mie Ayam & Bakso Lezat</h2>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#tentang">Tentang Kami</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="hero">
+        <h1>Selamat Datang di Warung Gilang Jaya 07!</h1>
+    </section>
+    
+    <section id="tentang">
+        <h2>Tentang Kami</h2>
+        <p>Warung Gilang Jaya 07 adalah usaha makanan sederhana yang menyediakan mie ayam, bakso, dan hidangan lezat lainnya. Didirikan pada tahun 2010, kami menggunakan bahan-bahan segar dan resep rumahan untuk memberikan rasa autentik Indonesia. Alamat kami: SP4 Jalur 1 Melintang Tengah, Kecamatan Manimeri, Kabupaten Teluk Bintuni, Provinsi Papua Barat, Indonesia. Kunjungi warung kami untuk pengalaman kuliner yang hangat dan mengenyangkan!</p>
+    </section>
+    
+    <section id="menu">
+        <h2>Menu Kami</h2>
+        <p>Nikmati berbagai pilihan mie dan bakso segar dengan harga terjangkau, diracik dengan sentuhan tradisional yang memikat.</p>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>🥢 Mie Ayam</h3>
+                <p>Mie kenyal yang lembut berpadu sempurna dengan topping ayam suwir empuk, kuah kaldu gurih yang menyelimuti setiap helai, dan taburan bawang goreng renyah untuk sentuhan akhir yang memabukkan.</p>
+            </div>
+            <div class="menu-item">
+                <h3>🥟 Mie Ayam + Bakso</h3>
+                <p>Kombinasi harmonis antara mie ayam klasik dan bakso halus yang kenyal segar, menciptakan ledakan rasa dalam setiap suapan, di mana kelembutan bertemu dengan kejuangan tekstur yang tak terlupakan.</p>
+            </div>
+            <div class="menu-item">
+                <h3>🍜 Mie Yamin</h3>
+                <p>Mie yamin spesial yang dibalut bumbu kering kaya rempah, ayam cincang halus, dan sayur hijau segar yang menyegarkan, menghadirkan simfoni rasa autentik dalam hidangan sederhana namun mewah.</p>
+            </div>
+            <div class="menu-item">
+                <h3>🥄 Bakso</h3>
+                <p>Bakso dari daging pilihan terbaik yang empuk dan beraroma, diselimuti kuah kaldu bening yang jernih, disajikan bersama mie lembut dan pangsit goreng renyah untuk kenikmatan murni.</p>
+            </div>
+            <div class="menu-item">
+                <h3>👶 Bakso Beranak</h3>
+                <p>Bakso besar yang penuh kejutan, berisi bakso kecil di dalamnya dengan isian daging premium dan telur puyuh yang mewah, menawarkan lapisan rasa yang mendalam dan menyenangkan.</p>
+            </div>
+            <div class="menu-item">
+                <h3>🌶️ Bakso Pedas</h3>
+                <p>Bakso dengan kuah pedas level sedang yang membara, dihiasi cabai rawit segar dan sambal autentik, membangkitkan sensasi panas yang membara di lidah sambil mempertahankan kelembutan daging.</p>
+            </div>
+            <div class="menu-item">
+                <h3>🧊 Es Teh Manis</h3>
+                <p>Minuman segar yang menyegarkan jiwa, teh hitam manis dengan es batu dingin yang meleleh pelan, menjadi pendamping ideal untuk hidangan utama, membawa keseimbangan sempurna dalam setiap teguk.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="kontak">
+        <h2>Kontak Kami</h2>
+        <p>Hubungi Warung Gilang Jaya 07 untuk pemesanan atau info lebih lanjut. Telepon/WhatsApp: <strong>082238626189</strong>. Kami siap melayani dengan sepenuh hati!</p>
+        <a href="https://wa.me/082238626189?text=Halo%20Warung%20Gilang%20Jaya%2007,%20saya%20ingin%20pesan%20makanan." class="whatsapp-btn">📱 Pesan via WhatsApp</a>
+        <a href="https://www.facebook.com/gilang.jaya.517898" class="facebook-btn" target="_blank">📘 Ikuti di Facebook - Gilang Jaya</a>
+        <form id="contactForm">
+            <input type="text" placeholder="Nama Anda" required>
+            <input type="email" placeholder="Email Anda" required>
+            <input type="tel" placeholder="Nomor Telepon (Opsional)">
+            <textarea placeholder="Pesan Anda (misalnya: Pesan Mie Ayam 2 porsi)" rows="5" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023 Warung Gilang Jaya 07. Semua hak cipta dilindungi. Alamat: SP4 Jalur 1 Melintang Tengah, Kecamatan Manimeri, Kabupaten Teluk Bintuni, Provinsi Papua Barat, Indonesia. Telepon: <strong>082238626189</strong>. <a href="https://www.facebook.com/gilang.jaya.517898" target="_blank">Facebook: Gilang Jaya</a>.</p>
+    </footer>
+
+    <script>
+        // JavaScript sederhana untuk form kontak
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Terima kasih! Pesan Anda telah dikirim ke Warung Gilang Jaya 07. Kami akan hubungi segera via 082238626189.');
+            this.reset();
+        });
+
+        // Smooth scrolling untuk navigasi
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
